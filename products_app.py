@@ -46,16 +46,37 @@ def create_product():
     products.append(product)
     print("CREATING PRODUCT HERE", product)
 
+#def update_product():
+#    product_id = input("OK. WHAT IS THE PRODUCT'S ID? ")
+#    product = [p for p in products if p["id"] == product_id][0]
+#    if product:
+#        print("OK. PLEASE PROVIDE THE PRODUCT'S INFORMATION...")
+#        for header in user_input_headers:
+#            product[header] = input("Change '{0}' from '{1}' to: ".format(header, product[header]))
+#        print("UPDATING PRODUCT HERE", product)
+#    else:
+#        print("COULDN'T FIND A PRODUCT WITH IDENTIFIER", product_id)
+
+
 def update_product():
-    product_id = input("OK. WHAT IS THE PRODUCT'S ID? ")
-    product = [p for p in products if p["id"] == product_id][0]
-    if product:
-        print("OK. PLEASE PROVIDE THE PRODUCT'S INFORMATION...")
-        for header in user_input_headers:
-            product[header] = input("Change '{0}' from '{1}' to: ".format(header, product[header]))
-        print("UPDATING PRODUCT HERE", product)
-    else:
-        print("COULDN'T FIND A PRODUCT WITH IDENTIFIER", product_id)
+    print("UPDATING A PRODUCT")
+    choose_a_product = input("OK. Please specify the product's identifier: ")
+    print("OK. Please specify the product's information..." )
+    product = [p for p in products if p["id"] == choose_a_product][0]
+    print(product)
+    product["name"] = input("Change name from {0} to: " .format(product["name"]))
+    product["aisle"] = input("Change aisle from {0} to: " .format(product["aisle"]))
+    product["department"] = input("Change department from {0} to: " .format(product["department"]))
+    product["price"] = input("Change price from {0} to: " .format(product["price"]))
+#    changed_name = input("Change name from {0} to: " .format(product["name"]))
+#    changed_aisle = input("Change aisle from {0} to: " .format(product["aisle"]))
+#    changed_department = input("Change department from {0} to: " .format(product["department"]))
+#    changed_price = input("Change price from {0} to: " .format(product["price"]))
+#    updated_product = {}
+#    updated_product = {"id": str(product["id"]), "name": changed_name, "aisle": changed_aisle, "department": changed_department, "price": changed_price}
+#    product = updated_product
+
+    print("UPDATING A PRODUCT HERE!", product)
 
 def destroy_product():
     product_id = input("OK. WHAT IS THE PRODUCT'S ID? ")
@@ -103,6 +124,5 @@ else:
 with open(products_csv, "w") as csv_file:
     writer = csv.DictWriter(csv_file, fieldnames=headers)
     writer.writeheader()
-
     for product in products:
         writer.writerow(product)
