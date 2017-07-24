@@ -126,3 +126,8 @@ with open(products_csv, "w") as csv_file:
     writer.writeheader()
     for product in products:
         writer.writerow(product)
+
+# don't run this app unless this script is executed from the command line.
+# this strategy allows us to test the app
+#if __name__ == "__main__":
+#    run()
