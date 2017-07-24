@@ -100,7 +100,7 @@ There are {1} products in the database.
     'Create'  | Add a new product.
     'Update'  | Edit an existing product.
     'Destroy' | Delete an existing product.
-Please select an operation: """.format("@s2t2", len(products)) # end of multi- line string. also using string interpolation
+Please select an operation: """.format("@5zy shore", len(products)) # end of multi- line string. also using string interpolation
 
 crud_operation = input(menu)
 
