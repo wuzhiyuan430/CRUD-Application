@@ -129,5 +129,9 @@ with open(products_csv, "w") as csv_file:
 
 # don't run this app unless this script is executed from the command line.
 # this strategy allows us to test the app
-#if __name__ == "__main__":
-#    run()
+def run():
+    if __name__ == "__main__":
+    run()
+
+#def enlarge(i):
+#    return i * 100
