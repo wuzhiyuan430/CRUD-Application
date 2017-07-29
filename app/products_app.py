@@ -131,7 +131,7 @@ with open(products_csv, "w") as csv_file:
 # this strategy allows us to test the app
 def run():
     if __name__ == "__main__":
-    run()
+        run()
 
 #def enlarge(i):
 #    return i * 100
